@@ -14,47 +14,47 @@ const numberOptions = times((i) => ({ key: i, value: i }), 50)
 
 const hot = new Handsontable(sheet, {
   data,
-  licenseKey: 'non-commercial-and-evaluation',
+  licenseKey: "non-commercial-and-evaluation",
   rowHeaders: true,
   colHeaders: headers,
-  width: '60%',
-  stretchH: 'all',
+  width: "60%",
+  stretchH: "all",
   columns: [
     {},
     {},
     {},
     {},
     {
-      type: 'text',
+      type: "text",
       editor: MultiSelectEditor,
       renderer: MultiSelectRenderer,
       select: {
         config: {
-          valueKey: 'key',
-          labelKey: 'text',
-          separator: ';',
+          valueKey: "value",
+          labelKey: "label",
+          separator: "\n",
         },
-        options (source, process) {
-          return new Promise((resolve) => {
-            setTimeout(resolve, 500, options)
-          })
-        },
-      }
-    }, {
-      type: 'numeric',
+        options: [
+          { value: "SE", label: "Sweden" },
+          { value: "DE", label: "Germany" },
+        ],
+      },
+    },
+    {
+      type: "numeric",
       editor: MultiSelectEditor,
       renderer: MultiSelectRenderer,
       select: {
         config: {
-          valueKey: 'key',
-          labelKey: 'value',
+          valueKey: "key",
+          labelKey: "value",
         },
-        options (source, process) {
+        options(source, process) {
           return new Promise((resolve) => {
-            setTimeout(resolve, 500, numberOptions)
-          })
+            setTimeout(resolve, 500, numberOptions);
+          });
         },
-      }
-    }
-  ]
-})
+      },
+    },
+  ],
+});

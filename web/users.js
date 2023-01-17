@@ -22,7 +22,7 @@ export default [
     "Gulgowski",
     "Ruth40@yahoo.com",
     "Regional Response Executive",
-    "Brazil;China"
+    "Brazil\nChina"
   ],
   [
     "Mavis",
