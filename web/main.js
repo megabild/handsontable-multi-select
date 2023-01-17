@@ -32,7 +32,8 @@ const hot = new Handsontable(sheet, {
         config: {
           valueKey: "value",
           labelKey: "label",
-          separator: "\n",
+          separator: "\t",
+          separatorKeyVal: "@@",
         },
         options: [
           { value: "SE", label: "Sweden" },
